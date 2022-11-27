@@ -1,18 +1,17 @@
 {
   "files": {
-    "main.css": "/quote-machine/static/css/main.e824db92.css",
-    "main.js": "/quote-machine/static/js/main.cc5d2330.js",
+    "main.css": "/quote-machine/static/css/main.8b186998.css",
+    "main.js": "/quote-machine/static/js/main.9265d867.js",
     "static/js/787.e43a185d.chunk.js": "/quote-machine/static/js/787.e43a185d.chunk.js",
     "static/media/bootstrap-icons.woff?": "/quote-machine/static/media/bootstrap-icons.4133309eaf232a933735.woff",
     "static/media/bootstrap-icons.woff2?": "/quote-machine/static/media/bootstrap-icons.cfde41d697b6dcd56fa6.woff2",
-    "static/media/logo.svg": "/quote-machine/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/quote-machine/index.html",
-    "main.e824db92.css.map": "/quote-machine/static/css/main.e824db92.css.map",
-    "main.cc5d2330.js.map": "/quote-machine/static/js/main.cc5d2330.js.map",
+    "main.8b186998.css.map": "/quote-machine/static/css/main.8b186998.css.map",
+    "main.9265d867.js.map": "/quote-machine/static/js/main.9265d867.js.map",
     "787.e43a185d.chunk.js.map": "/quote-machine/static/js/787.e43a185d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e824db92.css",
-    "static/js/main.cc5d2330.js"
+    "static/css/main.8b186998.css",
+    "static/js/main.9265d867.js"
   ]
 }

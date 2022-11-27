@@ -1,10 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import Select from 'react-select';
 
-class 
-App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -85,43 +83,54 @@ App extends React.Component {
 
   render() {
     const tweetHref = `https://twitter.com/intent/tweet?text="${this.props.currentQuoteData.quote}"- ${this.props.currentQuoteData.author}`
-    const previousQuotesList = this.props.previousQuotesData.filter(x=> x.order != 0).map((x, idx) => x!={}?<li key={idx*2}>{x.order}</li>:<li key="001">"test"</li>);
-    const authorList = this.props.authors.map((x, idx) => <li key={idx*5}>{x.value}</li>)
     return (
+      
       <div className="container-fluid">
-        <div className="text-center">
-          <h1>quote machine</h1>
-          <div id="quote-box">
-            <div id="text">
-              {this.props.storedQuotes[this.props.viewedQuote].quote}
-
-            </div><br/>
-            <div id="author">
-              author: {this.props.storedQuotes[this.props.viewedQuote].author}
-            </div><br/>
-            <div id="genre">
-              genre: {this.props.storedQuotes[this.props.viewedQuote].genre}
-            </div><br/>
-            <button onClick={this.getPrevQuote} id="prev-quote" className="btn btn-primary" 
-            disabled={this.props.viewedQuote == 1 ? true : false }>
-              previues quote
-            </button><br/>
-            <button onClick={this.getNextQuote} id="next-quote" className="btn btn-primary"
-            disabled={this.props.storedQuotesNumber == this.props.viewedQuote ? true : false}>
-              next quote
-            </button><br/>
-            <button onClick={this.newQuote} id="new-quote" className="btn btn-primary">
-              new quote
-            </button><br/>
-            {/* <button onClick={this.previousQuote} id="previous-quote">
-              previous quote
-            </button><br/> */}
-            <button>
-              <a id="tweet-quote" href={tweetHref} target="_blank"> 
+        <div className="bg"/>
+        <div className="bg bg2"/>
+        <div className="bg bg3"/>
+        <div className="text-center w-75 content">
+          <div id="heading" className="mb-3">
+             <h1><u>Quote generator</u></h1>
+          </div>
+          <div id="quote-box" className="mx-auto">
+            <blockquote id="text" className="blockquote mx-auto mb-4">
+              <h3>
+              "{this.props.storedQuotes[this.props.viewedQuote].quote}"
+              </h3>
+            </blockquote>
+            <figcaption  id="author" className="mx-auto mb-4">
+              <h4>
+                <cite>
+                {this.props.storedQuotes[this.props.viewedQuote].author}, {this.props.storedQuotes[this.props.viewedQuote].genre}
+                </cite>
+              </h4>
+            </figcaption >
+            {/* https://reactgo.com/react-disable-button/ */}
+          
+            {/* https://react-select.com */}
+          </div>
+          <div id="button-box"className="d-flex justify-content-center mb-4">
+            <button onClick={this.getPrevQuote} id="prev-quote" className="btn btn-success mx-auto" 
+            disabled={this.props.viewedQuote === 1 ? true : false }>
+              <i className="bi bi-arrow-left"></i> previus
+            </button>
+            <button onClick={this.getNextQuote} id="next-quote" className="btn btn-success mx-auto"
+            disabled={this.props.storedQuotesNumber === this.props.viewedQuote ? true : false}>
+              next <i className="bi bi-arrow-right"></i>
+            </button>
+            <Select className="w-50 mx-auto" options={this.props.genres}  isClearable={true} onChange={(choice) => this.handleChoice(choice)} placeholder="Select genre"/>
+            <button onClick={this.newQuote} id="new-quote" className="btn btn-primary mx-auto">
+              new quote <i className="bi bi-quote"></i>
+            </button>
+            <button className="btn btn-secondadry mx-auto">
+              <a id="tweet-quote" href={tweetHref} target="_blank" rel="noreferrer"> 
                 <i className="bi bi-twitter"></i>
               </a>
             </button>
-            <Select options={this.props.genres}  isClearable={true} onChange={(choice) => this.handleChoice(choice)}/>
+          </div>
+          <div id="credits" className="d-flex justify-center-left mb-0">
+            <p>Created by: <a href="https://github.com/michaelkozin" target="_blank" rel="noreferrer">Michael Kozin</a>, quotes from: <a href="https://github.com/pprathameshmore/QuoteGarden" target="_blank" rel="noreferrer">Quote garden</a></p>
           </div>
         </div>
       </div>
